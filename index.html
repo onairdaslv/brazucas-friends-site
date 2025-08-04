@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brazucas & Friends</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <script defer src="config.js"></script>
+</head>
+<body>
+  <div id="login-screen" class="centered-screen">
+    <h1>BEM VINDO</h1>
+    <input type="password" id="password" placeholder="Digite a senha..." />
+    <button onclick="checkPassword()">Entrar</button>
+  </div>
+
+  <div id="main-content" style="display:none;">
+    <header>
+      <img src="https://onedrive.live.com/download?resid=logo_demo" class="logo" alt="Logo" />
+      <nav>
+        <button onclick="showTab('home')">HOME</button>
+        <button onclick="showTab('tournament')">TOURNAMENT</button>
+        <button onclick="showTab('game')">GAME</button>
+        <button onclick="showTab('team')">TEAM</button>
+        <button onclick="showTab('gallery')">GALLERY</button>
+      </nav>
+    </header>
+
+    <section id="home" class="tab">
+      <h2>PLAYER INFOS</h2>
+      <select id="player-select" onchange="showPlayerInfo()">
+        <option value="">Select Player Name</option>
+        <option value="joao">João Silva</option>
+        <option value="pedro">Pedro Santos</option>
+      </select>
+      <div id="player-info"></div>
+    </section>
+
+    <section id="tournament" class="tab hidden">
+      <h2>TOURNAMENT</h2>
+      <p>DATE: 24.12.2026<br>PLACE: Soccerworld<br><a href="https://maps.google.com" target="_blank">Ver no Google Maps</a></p>
+      <ul id="tournament-players">
+        <li>João Silva <button onclick="confirmPresence('João Silva', 'tournament')">Confirmar</button></li>
+        <li>Pedro Santos <button onclick="confirmPresence('Pedro Santos', 'tournament')">Confirmar</button></li>
+      </ul>
+    </section>
+
+    <section id="game" class="tab hidden">
+      <h2>GAME</h2>
+      <p>DATE: 01.01.2027<br>PLACE: Lössnig<br><a href="https://maps.google.com" target="_blank">Ver no Google Maps</a></p>
+      <ul id="game-players">
+        <li>João Silva <button onclick="confirmPresence('João Silva', 'game')">Confirmar</button></li>
+        <li>Pedro Santos <button onclick="confirmPresence('Pedro Santos', 'game')">Confirmar</button></li>
+      </ul>
+    </section>
+
+    <section id="team" class="tab hidden">
+      <h2>TEAM</h2>
+      <div class="grid">
+        <div class="player-card"><img src="https://onedrive.live.com/download?resid=photo1_demo"><p>João Silva</p></div>
+        <div class="player-card"><img src="https://onedrive.live.com/download?resid=photo2_demo"><p>Pedro Santos</p></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="tab hidden">
+      <h2>GALLERY</h2>
+      <div class="gallery">
+        <div class="video-item">
+          <h4>01.01.2025</h4>
+          <iframe src="https://onedrive.live.com/embed?resid=video1_demo" width="320" height="180" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <h4>20.01.2025</h4>
+          <iframe src="https://onedrive.live.com/embed?resid=video2_demo" width="320" height="180" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <h4>30.01.2025</h4>
+          <iframe src="https://onedrive.live.com/embed?resid=video3_demo" width="320" height="180" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
